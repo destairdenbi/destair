@@ -5,22 +5,22 @@ de.STAIR develops flexible RNA-Seq analysis workflows for different RNA-Seq prot
 foobar, new Version etc.
 
 # Open Source Software Projects
-## * galaxy-workflow-generator
+* ## galaxy-workflow-generator
 ### Overview
 foobar
 ### Sources
 foobar
 ### Examples
 foobar
-## * galaxy-webhooks
-## * galaxy-atoms
-## * galaxy-workflows
-## * galaxy-tools
-## * RNA-Seq-scripts
+* galaxy-webhooks
+* galaxy-atoms
+* galaxy-workflows
+* galaxy-tools
+* RNA-Seq-scripts
 
 # Materials
-## * training-material
-## * talks-posters
+* ## training-material
+* ## talks-posters
 
 # Publications
 
