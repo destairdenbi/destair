@@ -6,10 +6,10 @@ foobar, new Version etc.
 
 # Open Source Software Projects
 * ## galaxy-workflow-generator
-... ### Overview
-... foobar
-... ### Sources
-... foobar
+### Overview
+foobar
+### Sources
+foobar
 ### Examples
 foobar
 * ## galaxy-webhooks
