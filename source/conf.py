@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'deSTAIRDocs'
+project = 'deSTAIR Projects'
 copyright = '2020, Steffen C. Lott, Andrea Bagnacani, Konstantin Riege'
 author = 'Steffen C. Lott, Andrea Bagnacani, Konstantin Riege'
 
@@ -41,6 +41,8 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+# set master to index
+master_doc = 'index'
 
 # -- Options for HTML output -------------------------------------------------
 
