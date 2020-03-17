@@ -9,7 +9,15 @@ Welcome to deSTAIR Projects's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
+   galaxy-workflow-generator
+   galaxy-webhooks
+   galaxy-atoms
+   galaxy-workflows
+   galaxy-tools
+   RNA-Seq-scripts
+   training-material
+   talks-posters
 
 
 Indices and tables
