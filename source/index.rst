@@ -1,23 +1,43 @@
-.. deSTAIR Projects documentation master file, created by
+. deSTAIR Projects documentation master file, created by
    sphinx-quickstart on Thu Mar 12 13:23:35 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 Welcome to deSTAIR Projects's documentation!
 ============================================
+foo
+
+
+GALAXY
+======
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
    
-   galaxy-workflow-generator
-   galaxy-webhooks
-   galaxy-atoms
-   galaxy-workflows
-   galaxy-tools
-   RNA-Seq-scripts
-   training-material
-   talks-posters
+   pages/galaxy-workflow-generator
+   pages/galaxy-webhooks
+   pages/galaxy-atoms
+   pages/galaxy-workflows
+   pages/galaxy-tools
+
+
+RNA-Seq-Scrips
+==============
+
+.. toctree::
+   :maxdepth: 2
+
+   pages/RNA-Seq-scripts
+
+
+Materials
+=========
+
+.. toctree::
+   :maxdepth: 2
+
+   pages/training-material
+   pages/talks-posters
 
 
 Indices and tables
