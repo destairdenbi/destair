@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Galaxy workflow generator for assisted RNA-Seq and BS/RRBS-Seq analyses &#8212; deSTAIR Projects 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Galaxy-Webhooks" href="galaxy-webhooks.html" />
+    <link rel="prev" title="Welcome to deSTAIR Projects’s documentation!" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="galaxy-webhooks.html" title="Galaxy-Webhooks"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to deSTAIR Projects’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">deSTAIR Projects 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p><a class="reference external" href="https://travis-ci.org/destairdenbi/galaxy-workflow-generator"><img alt="Build Status" src="https://travis-ci.org/destairdenbi/galaxy-workflow-generator.svg?branch=master" /></a>
+<a class="reference external" href="https://quay.io/repository/destair/galaxy-workflow-generator"><img alt="Docker Repository on Quay" src="https://quay.io/repository/destair/galaxy-workflow-generator/status" /></a></p>
+<div class="section" id="galaxy-workflow-generator-for-assisted-rna-seq-and-bs-rrbs-seq-analyses">
+<h1>Galaxy workflow generator for assisted RNA-Seq and BS/RRBS-Seq analyses<a class="headerlink" href="#galaxy-workflow-generator-for-assisted-rna-seq-and-bs-rrbs-seq-analyses" title="Permalink to this headline">¶</a></h1>
+<p>With contributions from a growing community of developers and users, the number
+of <em>alternative</em> Galaxy tools addressing the same questions has steadily risen.
+For this reason, it has become harder for the user to make informed decisions
+on the selection of tools, and their parameterization.<br />The <a class="reference external" href="https://galaxyproject.github.io/training-material/">Galaxy training material</a>
+has helped sharing best-practices where novice and expert users can learn new
+methods to carry out their analyses. However, tools are pre-selected by the
+community, and the absence of a systematic overview of the available
+alternative tools of a Galaxy instance, does not train users on how to evaluate
+alternative algorithms and parameterizations.</p>
+<p>The <strong>Galaxy workflow generator</strong> provides an overview of the available
+alternative tools that users can use to build RNA-Seq and BS-Seq analyses.
+Here, users are presented with new interactive pop-ups to compare and evaluate
+the suitability of each tool during the course of the analysis.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#how-it-works">How it works</a></p></li>
+<li><p><a class="reference external" href="#run-the-instance">Run the instance</a></p>
+<ul>
+<li><p><a class="reference external" href="#installation-requirements">Installation requirements</a></p></li>
+<li><p><a class="reference external" href="#run-the-container">Run the container</a></p></li>
+<li><p><a class="reference external" href="#login-credentials">Login credentials</a></p></li>
+<li><p><a class="reference external" href="#update-to-a-newer-image">Howto update</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#tools">Tools</a></p>
+<ul>
+<li><p><a class="reference external" href="#quality-control">Quality control</a></p></li>
+<li><p><a class="reference external" href="#mapping">Mapping</a></p></li>
+<li><p><a class="reference external" href="#rna-seq">RNA-Seq</a></p></li>
+<li><p><a class="reference external" href="#bsrrbs-seq">BS/RRBS-Seq</a></p></li>
+<li><p><a class="reference external" href="#utilities">Utilities</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#support">Support</a></p>
+<ul>
+<li><p><a class="reference external" href="#contributing">Contributing</a></p></li>
+<li><p><a class="reference external" href="#contributors">Contributors</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#mit-license">MIT license</a></p></li>
+</ul>
+<div class="section" id="how-it-works">
+<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Galaxy workflow generator</strong> presents a different way of how to assist in
+the creation of Galaxy workflows. Here, single or multiple alternative Galaxy
+tools are provided as an <strong>atom</strong>: an interactive tour that illustrates tool
+options and parameterizations within the context of a selected analysis.<br />In this Galaxy instance, we provide sample analyses organized into their
+logical <strong>tasks</strong>. For example, an RNA-Seq analysis is organized into:</p>
+<ul class="simple">
+<li><p>Task 1: Quality control and data preprocessing</p></li>
+<li><p>Task 2: Genome alignment</p></li>
+<li><p>Task 3: Transcript quantification and differential gene expression</p></li>
+</ul>
+<p>Each task can be completed by means of one or more alternative atoms.<br />The Galaxy workflow generator embeds a <strong>plugin</strong> that extends the Galaxy
+interface with novel interactive dialogs, which compare the alternative atoms
+that can be used to solve the current task in the selected analysis. Doing so,
+we are able to inform users about alternative tools and parameterizations.</p>
+<p>The Figure below illustrates how the process of selecting atoms and building
+workflows takes place. Here, a user is carrying out an RNA-Seq analysis, which
+is divided into its three tasks: 1) Quality control and data preprocessing, 2)
+Genome alignment, 3) Transcript quantification and differential gene
+expression. For each task, the user selects the desired atom in the front-end
+interface, and navigates the corresponding interactive tour. The interactive
+tour drives the execution of each underlying tool in the Galaxy back-end. Once
+each task has been completed, the resulting workflow (traced in red), will thus
+be composed of the series of alternative tools of each selected atom,
+parameterized according to the interactive tour.</p>
+<p align="center">
+  <img align="center"
+    src="web/process.png"
+    width="600px"
+    alt="Assisted RNA-Seq analysis in the Galaxy workflow generator"
+    valign="top"/>
+</p><p>The Galaxy workflow generator collects alternative atoms to carry out RNA-Seq
+and BS/RRBS-Seq analyses.</p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="run-the-instance">
+<h2>Run the instance<a class="headerlink" href="#run-the-instance" title="Permalink to this headline">¶</a></h2>
+<p>The Galaxy workflow generator can run on you machine. The following sections
+will help you set up and run the instance. Optional, have a look <a class="reference external" href="https://github.com/bgruening/docker-galaxy-stable">here</a> for more detailed information.</p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p><div class="section" id="installation-requirements">
+<h3>Installation requirements<a class="headerlink" href="#installation-requirements" title="Permalink to this headline">¶</a></h3>
+<p>The only requirement is <a class="reference external" href="https://www.docker.com/">Docker</a>, which can be
+installed in different ways depending on the underlying system:</p>
+<ul class="simple">
+<li><p>Unix users should follow the
+<a class="reference external" href="https://docs.docker.com/installation">Docker installation for Linux</a></p></li>
+<li><p>MacOS 10.12+ users should follow the
+<a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-mac">Docker installation for Mac</a></p></li>
+<li><p>Windows 10+ users, should follow the
+<a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">Docker installation for Windows</a></p></li>
+<li><p>Non-unix users, whose operative system version is older than the
+aforementioned one, can rely on <a class="reference external" href="https://kitematic.com/">Kitematic</a></p></li>
+</ul>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="run-the-container">
+<h3>Run the container<a class="headerlink" href="#run-the-container" title="Permalink to this headline">¶</a></h3>
+<p>Users not relying on Kitematic can open a terminal, or a Windows PowerShell,
+and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run --net bridge -d -p 8080:80 --name destair quay.io/destair/galaxy-workflow-generator:latest
+</pre></div>
+</div>
+<blockquote>
+<div><p>To allow the use of multiple threads, please prefix the aforementioned
+command in the following way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run -e &quot;GALAXY_CONFIG_PARALLEL_SLURM_PARAMS=--ntasks=8&quot; \
+  -e &quot;GALAXY_CONFIG_PARALLEL_LOCAL_NTASKS=8&quot; ...
+</pre></div>
+</div>
+<p>To store users and data permanently, mount a directory on your harddrive into the containers /export directory
+by adding the following parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ -v /absolute/path/to/local/directory:/export
+</pre></div>
+</div>
+<p>To use an other user account rather than the default admins, to allow for anonoymous workflow generation
+prefix the command the following way and create the new user afterwards:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run -e &quot;GALAXY_DEFAULT_WORKFLOWGENERATOR_USER=username@to-be.created&quot;
+</pre></div>
+</div>
+</div></blockquote>
+<p>Kitematic users can launch the Galaxy instance by following
+<a class="reference external" href="https://docs.docker.com/kitematic/userguide/">these instructions</a>.</p>
+<p>After running the container, the Galaxy instance can be accessed from the local
+web browser, at the address <code class="docutils literal notranslate"><span class="pre">localhost:8080</span></code>.<br />We recommend using Google Chrome, Chromium, or Mozilla Firefox.</p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="login-credentials">
+<h3>Login credentials<a class="headerlink" href="#login-credentials" title="Permalink to this headline">¶</a></h3>
+<p>To be able to analyse data, users need to be logged in.</p>
+<ul class="simple">
+<li><p>Galaxy users can create an account by clicking on the <code class="docutils literal notranslate"><span class="pre">Login</span> <span class="pre">or</span> <span class="pre">Register</span></code>
+button, on the top header</p></li>
+<li><p>Galaxy administrators can use the default credentials username: <code class="docutils literal notranslate"><span class="pre">admin</span></code>,
+password: <code class="docutils literal notranslate"><span class="pre">admin</span></code>, and then change settings later on.</p></li>
+</ul>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="update-to-a-newer-image">
+<h3>Update to a newer image<a class="headerlink" href="#update-to-a-newer-image" title="Permalink to this headline">¶</a></h3>
+<p>Stop the running container.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker stop destair
+</pre></div>
+</div>
+<p>Pull the latest image</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker pull quay.io/destair/galaxy-workflow-generator:latest
+</pre></div>
+</div>
+<p>Run the new image as described above</p>
+<p>In case a bind mount (<code class="docutils literal notranslate"><span class="pre">-v</span></code> parameter, see above) was used, upgrades on atoms and tours can be found, compared and copied from the following locations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp -r /absolute/path/to/local/directory/.distribution_config/plugins/webhooks/* /absolute/path/to/local/directory/galaxy-central/plugins/webhooks
+$ cp /absolute/path/to/local/directory/.distribution_config/plugins/tours/*.yaml /absolute/path/to/local/directory/galaxy-central/plugins/tours/
+</pre></div>
+</div>
+<p>Now restart Galaxy</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker exec destair supervisorctl restart galaxy:
+</pre></div>
+</div>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<p>The tools catalog is bound to be modified and expanded during the development
+of the Galaxy workflow generator.<br />The following list provides an overview of the tools that have been installed so far.</p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p><div class="section" id="quality-control">
+<h3>Quality control<a class="headerlink" href="#quality-control" title="Permalink to this headline">¶</a></h3>
+<p>Tool | Description | Reference
+:—: | :— | :—
+Cutadapt | Error-tolerant adapter removal tool for High-Throughput Sequencing reads | <a class="reference external" href="https://doi.org/10.14806/ej.17.1.200">Martin 2011</a>
+FastQC | A quality control tool for high throughput sequence data | <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">Andrews</a>
+PRINSEQ | A quality control and data preprocessing tool for metagenomic data | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btr026">Schmieder and Edwards 2011</a>
+Trim Galore! | Quality control tool for read trimming and filtering of NGS data |
+Trimmomatic | Quality control tool for read trimming and filtering of Illumina NGS data | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btu170">Bolger et al. 2014</a></p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="mapping">
+<h3>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h3>
+<p>Tool | Description | Reference
+:—: | :— | :—
+BWA | Burrows-Wheeler Aligner for mapping low-divergent sequences against a large reference genome | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btp698">Li and Durbin 2010</a>
+bwameth | Fast and accurate aligner of BS-Seq reads | <a class="reference external" href="https://arxiv.org/abs/1401.1129">Brent et al. 2014</a>
+HISAT2 | Hierarchical indexing for spliced alignment of transcripts | <a class="reference external" href="https://doi.org/10.1038/nprot.2016.095">Pertea et al. 2016</a>
+segemehl | Short sequence read to reference genome mapper | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btu146">Otto et al. 2014</a>
+STAR | Rapid spliced aligner for RNA-seq data | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/bts635">Dobin et al. 2013</a></p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="rna-seq">
+<h3>RNA-Seq<a class="headerlink" href="#rna-seq" title="Permalink to this headline">¶</a></h3>
+<p>Tool | Description | Reference
+:—: | :— | :—
+BWA | Burrows-Wheeler Aligner for mapping low-divergent sequences against a large reference genome | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btp698">Li and Durbin 2010</a>
+DESeq2 | Differential gene expression analysis based on the negative binomial distribution | <a class="reference external" href="https://doi.org/10.1186/s13059-014-0550-8">Love et al. 2014</a>
+featureCounts | Genomic feature read count tool for summarising of genes, exons, and promoter counts | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btt656">Liao et al. 2014</a>
+HISAT2 | Hierarchical indexing for spliced alignment of transcripts | <a class="reference external" href="https://doi.org/10.1038/nprot.2016.095">Pertea et al. 2016</a>
+HTSeq-count | Tool for counting reads in features | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btu638">Anders et al. 2015</a>
+Rcorrector | A kmer-based error correction method for RNA-seq data | <a class="reference external" href="https://doi.org/10.1186/s13742-015-0089-y">Song et al. 2015</a>
+RSeQC | An RNA-seq Quality Control Package | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/bts356">Wang et al. 2012</a>
+SortMeRNA | A tool for filtering, mapping and OTU-picking NGS reads in metatranscriptomic and -genomic data | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/bts611">Kopylova et al. 2011</a>
+STAR | Rapid spliced aligner for RNA-seq data | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/bts635">Dobin et al. 2013</a></p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="bs-rrbs-seq">
+<h3>BS/RRBS-Seq<a class="headerlink" href="#bs-rrbs-seq" title="Permalink to this headline">¶</a></h3>
+<p>Tool | Description | Reference
+:—: | :— | :—
+Bismark | A program to map bisulfite treated sequencing reads to a genome of interest and perform methylation calls | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btr167">Krueger et al. 2011</a>
+bwameth | Fast and accurate aligner of BS-Seq reads | <a class="reference external" href="https://arxiv.org/abs/1401.1129">Brent et al. 2014</a>
+MethylDackel | A tool to extract per-base methylation metrics from coordinate-sorted and indexed BS-seq alignments | <a class="reference external" href="https://github.com/dpryan79/MethylDackel">Ryan</a>
+segemehl | Short sequence read to reference genome mapper | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btu146">Otto et al. 2014</a></p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="utilities">
+<h3>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h3>
+<p>Tool | Description | Reference
+:—: | :— | :—
+SAMtools | Utilities for manipulating alignments in the SAM format | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btp352">Heng et al. 2009</a>
+BEDTools | Utilities for genome arithmetic | <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btq033">Quinlan et al. 2010</a></p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>If you have questions, or don’t know how to solve a problem, please contact us
+<a class="reference external" href="https://destair.bioinf.uni-leipzig.de/about/">here</a>, or file an
+<a class="reference external" href="https://github.com/destairdenbi/galaxy-workflow-generator/issues">issue</a>.</p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p><div class="section" id="contributing">
+<h3>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h3>
+<p>New contributions are always welcome. Please read
+<a class="reference external" href="https://github.com/destairdenbi/galaxy-workflow-generator/blob/master/CONTRIBUTING">these instructions</a>
+before proceeding in doing so.</p>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+<div class="section" id="contributors">
+<h3>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/bagnacan">Andrea Bagnacani</a></p></li>
+<li><p><a class="reference external" href="https://github.com/bebatut">Bérénice Batut</a></p></li>
+<li><p><a class="reference external" href="https://github.com/bgruening">Björn Grüning</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lotts">Steffen Lott</a></p></li>
+<li><p><a class="reference external" href="https://github.com/koriege">Konstantin Riege</a></p></li>
+<li><p><a class="reference external" href="https://github.com/mwolfien">Markus Wolfien</a></p></li>
+</ul>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p></div>
+</div>
+<div class="section" id="mit-license">
+<h2>MIT license<a class="headerlink" href="#mit-license" title="Permalink to this headline">¶</a></h2>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Galaxy workflow generator for assisted RNA-Seq and BS/RRBS-Seq analyses</a><ul>
+<li><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li><a class="reference internal" href="#run-the-instance">Run the instance</a><ul>
+<li><a class="reference internal" href="#installation-requirements">Installation requirements</a></li>
+<li><a class="reference internal" href="#run-the-container">Run the container</a></li>
+<li><a class="reference internal" href="#login-credentials">Login credentials</a></li>
+<li><a class="reference internal" href="#update-to-a-newer-image">Update to a newer image</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tools">Tools</a><ul>
+<li><a class="reference internal" href="#quality-control">Quality control</a></li>
+<li><a class="reference internal" href="#mapping">Mapping</a></li>
+<li><a class="reference internal" href="#rna-seq">RNA-Seq</a></li>
+<li><a class="reference internal" href="#bs-rrbs-seq">BS/RRBS-Seq</a></li>
+<li><a class="reference internal" href="#utilities">Utilities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#support">Support</a><ul>
+<li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#contributors">Contributors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mit-license">MIT license</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Welcome to deSTAIR Projects’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="galaxy-webhooks.html"
+                        title="next chapter">Galaxy-Webhooks</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/pages/galaxy-workflow-generator.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="galaxy-webhooks.html" title="Galaxy-Webhooks"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to deSTAIR Projects’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">deSTAIR Projects 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Steffen C. Lott, Andrea Bagnacani, Konstantin Riege.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.
+    </div>
+  </body>
+</html>

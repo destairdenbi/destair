@@ -1,0 +1,3 @@
+[submodule "extSources/galaxy-atoms"]
+	path = extSources/galaxy-atoms
+	url = https://github.com/destairdenbi/galaxy-atoms.git
