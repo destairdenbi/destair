@@ -1,6 +1,6 @@
-# Galaxy-Webhooks
+<div id="top"></div>
 
-## Plugin
+# Plugin
 
 This repository contains the de.STAIR Galaxy plugin, which is incorporated in
 the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator).  
@@ -168,4 +168,3 @@ Run the Galaxy launch script to verify the Galaxy framework setup and the inclus
 $ $GALAX_ROOT/run.sh
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
-

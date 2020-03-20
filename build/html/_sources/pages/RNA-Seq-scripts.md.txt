@@ -33,4 +33,3 @@ See project details at [de.STAIR project page](http://destair.bioinf.uni-leipzig
   * Sleuth needs R/Rstudio
   * Alternatively using traditional mappers like [Star](https://github.com/alexdobin/STAR) or [Hisat2](http://www.ccb.jhu.edu/software/hisat/index.shtml)
   * [TRAPLINE](https://usegalaxy.org/u/mwolfien/p/trapline---manual) only for showcases =P
-

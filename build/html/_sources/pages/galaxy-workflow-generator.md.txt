@@ -1,3 +1,6 @@
+<div id="top"></div>
+
+
 [![Build Status](https://travis-ci.org/destairdenbi/galaxy-workflow-generator.svg?branch=master)](https://travis-ci.org/destairdenbi/galaxy-workflow-generator)
 [![Docker Repository on Quay](https://quay.io/repository/destair/galaxy-workflow-generator/status "Docker Repository on Quay")](https://quay.io/repository/destair/galaxy-workflow-generator)
 
@@ -285,4 +288,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>

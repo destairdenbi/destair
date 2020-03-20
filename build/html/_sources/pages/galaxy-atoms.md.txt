@@ -1,4 +1,6 @@
-# Galaxy-Atoms
+<div id="top"></div>
+
+# Atoms
 
 This repository contains the de.STAIR atoms that are incorporated in the
 [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator),
@@ -172,4 +174,4 @@ Tours``.
 - [Set up the de.STAIR plugin](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-plugin)
 - [Run the Galaxy framework](https://github.com/destairdenbi/galaxy-webhooks#run-the-galaxy-framework)
 
-
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>

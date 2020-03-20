@@ -82,4 +82,3 @@ we show how to set up your system in order to run the [Galaxy RNA workbench](htt
 container, using the [Kitematic](https://kitematic.com/) desktop
 application.
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
-

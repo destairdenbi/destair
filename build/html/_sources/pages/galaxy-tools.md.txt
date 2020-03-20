@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-# Galaxy-Tools
+# Tools
 
 This repository contains the de.STAIR tools that are incorporated in the
 [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator),
@@ -65,4 +65,3 @@ Run the Galaxy launch script to verify the Galaxy framework setup and the inclus
 $ $GALAX_ROOT/run.sh
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
-
