@@ -1,0 +1,24 @@
+[submodule "extSources/galaxy-atoms"]
+	path = extSources/galaxy-atoms
+	url = https://github.com/destairdenbi/galaxy-atoms.git
+[submodule "extSources/galaxy-workflow-generator"]
+	path = extSources/galaxy-workflow-generator
+	url = https://github.com/destairdenbi/galaxy-workflow-generator.git
+[submodule "extSources/talks-posters"]
+	path = extSources/talks-posters
+	url = https://github.com/destairdenbi/talks-posters.git
+[submodule "extSources/galaxy-webhooks"]
+	path = extSources/galaxy-webhooks
+	url = https://github.com/destairdenbi/galaxy-webhooks.git
+[submodule "extSources/training-material"]
+	path = extSources/training-material
+	url = https://github.com/destairdenbi/training-material.git
+[submodule "extSources/galaxy-workflows"]
+	path = extSources/galaxy-workflows
+	url = https://github.com/destairdenbi/galaxy-workflows.git
+[submodule "extSources/galaxy-tools"]
+	path = extSources/galaxy-tools
+	url = https://github.com/destairdenbi/galaxy-tools.git
+[submodule "extSources/RNA-Seq-scripts"]
+	path = extSources/RNA-Seq-scripts
+	url = https://github.com/destairdenbi/RNA-Seq-scripts.git
