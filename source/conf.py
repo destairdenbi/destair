@@ -13,7 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+import sphinx_glpi_theme
 
 # test
 # for Sphinx-1.4 or newer
@@ -67,9 +67,13 @@ master_doc = 'index'
 # a list of builtin themes.
 #
 ## html_theme = 'alabaster'
-html_theme = 'classic'
+## html_theme = 'classic'
+html_theme = 'glpi'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+
+
+html_theme_path = sphinx_glpi_theme.get_html_themes_path()
+#html_static_path = ['_static']
