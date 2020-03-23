@@ -13,9 +13,10 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sphinx_glpi_theme
+##import sphinx_glpi_theme
+import sphinx_rtd_theme
 
-# test
+
 # for Sphinx-1.4 or newer
 extensions = ['recommonmark']
 
@@ -27,9 +28,6 @@ source_parsers = {
 }
 
 source_suffix = ['.rst', '.md']
-
-# end test
-
 
 
 # -- Project information -----------------------------------------------------
@@ -68,12 +66,14 @@ master_doc = 'index'
 #
 ## html_theme = 'alabaster'
 ## html_theme = 'classic'
-html_theme = 'glpi'
+## html_theme = 'glpi'
+html_theme = "sphinx_rtd_theme"
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 
 
-html_theme_path = sphinx_glpi_theme.get_html_themes_path()
-#html_static_path = ['_static']
+##html_theme_path = sphinx_glpi_theme.get_html_themes_path()
+html_static_path = ['_static']
