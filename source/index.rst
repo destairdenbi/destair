@@ -1,6 +1,9 @@
-Welcome to deSTAIR Projects's documentation!
-============================================
-foo
+Welcome to de.STAIR Projects's documentation!
+=============================================
+.. toctree::
+   :maxdepth: 2
+
+   pages/destair
 
 
 GALAXY
@@ -41,3 +44,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
